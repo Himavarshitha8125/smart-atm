@@ -1,3 +1,16 @@
+This Smart ATM project implements a Monolithic MVC (Model-View-Controller) architecture as a single-threaded desktop application.
+
+Monolithic Desktop Application - All components (GUI, ML inference, data persistence, business logic) execute in one Python process without external services or APIs.
+
+Design Pattern: MVC
+The BankUi class naturally follows MVC separation adapted for Tkinter:
+
+Component	Implementation	Key Methods/Features
+Model	Data layer + ML models	pandas CSV ops (write_to_csv, user_deposit_trans), pickled SVM (train_model, video_check), face embeddings
+View:	Tkinter UI screens	Frame-based navigation (final_page, withdraw_money_page), buttons/labels/entries
+Controller:	BankUi class	Orchestrates flow (begin_page → enroll_user → video_capture_page → video_check → final_page)
+
+
 Technologies used:
 Python:
 Acts as the primary programming language to glue all components: GUI, face recognition, ML model, and CSV database.
